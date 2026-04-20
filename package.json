@@ -14,7 +14,7 @@
     "db:migrate": "ts-node --transpile-only src/db/migrate.ts",
     "db:seed": "ts-node-dev --transpile-only src/db/seed.ts",
     "db:studio": "drizzle-kit studio",
-    "start:prod": "npm run db:migrate && node dist/index.js"
+    "start:prod": "node dist/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
