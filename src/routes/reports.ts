@@ -8,7 +8,8 @@ import { AuthRequest } from '../types';
 import { logger } from '../config/logger';
 
 const router = Router();
-router.use(authenticate, authorizeMinRole('supervisor'));
+router.use(authenticate);
+router.use(authorizeMinRole('supervisor'));
 
 // GET /reports/summary
 router.get('/summary', async (req: AuthRequest, res: Response) => {

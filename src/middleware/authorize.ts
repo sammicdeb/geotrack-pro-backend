@@ -1,6 +1,5 @@
 import { Response, NextFunction } from 'express';
-import { Role } from '@prisma/client';
-import { AuthRequest } from '../types';
+import { Role, AuthRequest } from '../types';
 import { forbidden } from '../utils/response';
 
 const ROLE_RANK: Record<Role, number> = {

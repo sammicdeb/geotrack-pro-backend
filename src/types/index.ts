@@ -1,10 +1,19 @@
 import { Request } from 'express';
-import { Role } from '@prisma/client';
+
+export type Role = 'super_admin' | 'admin' | 'supervisor' | 'field_agent' | 'viewer';
 
 export interface AuthPayload {
   userId: string;
   orgId: string;
   role: Role;
+}
+
+declare global {
+  namespace Express {
+    interface Request {
+      auth: AuthPayload;
+    }
+  }
 }
 
 export interface AuthRequest extends Request {
